@@ -1,5 +1,5 @@
 {
-  "name": "my-schematic",
+  "name": "schematic-starter",
   "version": "0.0.0",
   "description": "A blank schematics",
   "scripts": {
@@ -7,8 +7,8 @@
     "build:clean:launch": "yarn build && yarn clean:launch",
     "clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
     "clean:launch": "yarn clean && yarn launch",
-    "launch": "cd sandbox && ng g my-schematic:my-schematic",
-    "link:schematic": "yarn link && cd sandbox && yarn link my-schematic",
+    "launch": "cd sandbox && ng g schematic-starter:schematic-starter",
+    "link:schematic": "yarn link && cd sandbox && yarn link schematic-starter",
     "publish": "yarn test && PUBLISH_CMD",
     "test": "yarn build:clean:launch && yarn test:sandbox && yarn clean",
     "test:sandbox": "cd sandbox && yarn lint && yarn test && yarn e2e && yarn build",
@@ -17,7 +17,6 @@
   "keywords": [
     "schematics"
   ],
-  "author": "kevin",
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {

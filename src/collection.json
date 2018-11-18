@@ -1,13 +1,13 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "my-schematic": {
+    "schematic-starter": {
       "description": "A blank schematic.",
-      "factory": "./my-schematic/index#mySchematic"
+      "factory": "./schematic-starter/index#schematicStarter"
     },
     "ng-add": {
-      "description": "Add MySchematic to an application.",
-      "factory": "./my-schematic/index#mySchematic"
+      "description": "Add SchematicStarter to an application.",
+      "factory": "./schematic-starter/index#schematicStarter"
     }
   }
 }
