@@ -9,7 +9,7 @@
     "clean:launch": "yarn clean && yarn launch",
     "launch": "cd sandbox && ng g schematic-starter:schematic-starter",
     "link:schematic": "yarn link && cd sandbox && yarn link schematic-starter",
-    "publish": "yarn test && PUBLISH_CMD",
+    "publish": "yarn build",
     "test": "yarn build:clean:launch && yarn test:sandbox && yarn clean",
     "test:sandbox": "cd sandbox && yarn lint && yarn test && yarn e2e && yarn build",
     "test:unit": "yarn build && jasmine src/**/*_spec.js"

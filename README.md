@@ -86,9 +86,18 @@ schematics --help
 
 ## Publishing
 
-To publish, simply do:
+The `publish` package.json script is setup to build the schematic. Additional testing scripts could be added to ensure stable releases.
 
-```bash
-npm run build
-npm publish
+Before publishing:
+
+- change the package.json `name` value
+- if using a scope package name (`@username/package-name`), ensure the following is in your package.json.
+
+```json
+{
+    "name": "@username/package-name",
+    "publishConfig": {
+        "access": "public"
+    },
+}
 ```
