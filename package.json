@@ -4,15 +4,15 @@
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "build:clean:launch": "yarn build && yarn clean:launch",
+    "build:clean:launch": "npm run build && npm run clean:launch",
     "clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
-    "clean:launch": "yarn clean && yarn launch",
+    "clean:launch": "npm run clean && npm run launch",
     "launch": "cd sandbox && ng g schematic-starter:schematic-starter",
-    "link:schematic": "yarn link && cd sandbox && yarn link schematic-starter",
-    "publish": "yarn build",
-    "test": "yarn build:clean:launch && yarn test:sandbox && yarn clean",
-    "test:sandbox": "cd sandbox && yarn lint && yarn test && yarn e2e && yarn build",
-    "test:unit": "yarn build && jasmine src/**/*_spec.js"
+    "link:schematic": "npm link && cd sandbox && npm link schematic-starter",
+    "publish": "npm run build",
+    "test": "npm run build:clean:launch && npm run test:sandbox && npm run clean",
+    "test:sandbox": "cd sandbox && npm run lint && npm run test && npm run e2e && npm run build",
+    "test:unit": "npm run build && jasmine src/**/*_spec.js"
   },
   "keywords": [
     "schematics"
