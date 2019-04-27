@@ -2,24 +2,21 @@ import {
   Rule,
   SchematicContext,
   Tree,
-  chain,
-  SchematicsException,
   apply,
   url,
   template,
-  move,
-  mergeWith
+  move
 } from "@angular-devkit/schematics";
 import { strings } from "@angular-devkit/core";
-import { getBase64Image } from "./utils";
-import { dasherize } from "@angular-devkit/core/src/utils/strings";
+
+// declare AddFilesInterface
 
 export function schematicStarter(_options: any): Rule {
   return (tree: Tree, context: SchematicContext) => {
+    // todo: use the template() function and provide the strings and _options members
     const rules: Rule[] = [];
 
-    // todo: use the url() function to retrieve the source from the './files' directory
-
-    // todo: use the apply() function to apply rules (empty for now)
+    const source = url("./files");
+    return apply(source, rules)(context);
   };
 }
