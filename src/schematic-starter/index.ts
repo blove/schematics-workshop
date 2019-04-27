@@ -49,6 +49,6 @@ function addFiles(_options: AddFilesInterface): Rule {
       move(path)
     ]);
 
-    return chain([mergeWith(templateSource)])(tree, context);
+    return mergeWith(templateSource);
   };
 }
