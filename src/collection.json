@@ -3,11 +3,13 @@
   "schematics": {
     "schematic-starter": {
       "description": "A blank schematic.",
-      "factory": "./schematic-starter/index#schematicStarter"
+      "factory": "./schematic-starter/index#schematicStarter",
+      "schema": "./schematic-starter/schema.json"
     },
     "ng-add": {
       "description": "Add SchematicStarter to an application.",
-      "factory": "./schematic-starter/index#schematicStarter"
+      "factory": "./schematic-starter/index#schematicStarter",
+      "schema": "./schematic-starter/schema.json"
     }
   }
 }

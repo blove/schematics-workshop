@@ -1,2 +1,3 @@
 *.lock
 sandbox/node_modules
+src/schematic-starter/files
