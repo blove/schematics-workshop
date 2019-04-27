@@ -18,37 +18,22 @@ interface AddFilesInterface {
   name: string;
   browserType: string;
   selector: string;
+  style: string;
 }
 
 export function schematicStarter(_options: AddFilesInterface): Rule {
-  _options = {
-    ..._options,
-    ...{ selector: `app-${dasherize(_options.name)}`, style: "css" }
-  };
+  _options.selector = `app-${dasherize(_options.name)}`;
+  _options.style = "css";
 
-  return (tree: Tree, _context: SchematicContext) => {
-    return chain([addFiles(_options)])(tree, _context);
-  };
-}
-
-function addFiles(_options: AddFilesInterface): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    if (!_options.name) {
-      throw new SchematicsException("Entity name is required");
-    }
+    // todo: add a check for a missing name property
+
     const path = `./src/app/components`;
 
-    context.logger.debug(`adding files to ${path} dir`);
-    _options.browserType = getBase64Image(_options.browserType);
+    // todo: add debug statement
 
-    const templateSource = apply(url("./files"), [
-      template({
-        ...strings,
-        ..._options
-      }),
-      move(path)
-    ]);
+    // todo: use the getBase64Image function and override the browserType property on the _options object
 
-    return mergeWith(templateSource);
+    // todo: apply template and move rules to the source files
   };
 }
