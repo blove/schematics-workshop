@@ -27,7 +27,7 @@ export function schematicStarter(_options: AddFilesInterface): Rule {
   };
 
   return (tree: Tree, _context: SchematicContext) => {
-    return chain([addFiles(_options)])(tree, _context);
+    // todo: chain multiple rules into a single rule. Invoke with the tree and context to return a Tree.
   };
 }
 
@@ -41,14 +41,6 @@ function addFiles(_options: AddFilesInterface): Rule {
     context.logger.debug(`adding files to ${path} dir`);
     _options.browserType = getBase64Image(_options.browserType);
 
-    const templateSource = apply(url("./files"), [
-      template({
-        ...strings,
-        ..._options
-      }),
-      move(path)
-    ]);
-
-    return mergeWith(templateSource);
+    // todo: refactor return type to use mergeWith
   };
 }
