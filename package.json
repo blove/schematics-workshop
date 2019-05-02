@@ -22,6 +22,7 @@
   "dependencies": {
     "@angular-devkit/core": "^7.3.8",
     "@angular-devkit/schematics": "^7.3.8",
+    "@schuchard/prettier": "3.0.2",
     "@types/jasmine": "^3.3.12",
     "@types/node": "^11.13.4",
     "jasmine": "^3.4.0",
