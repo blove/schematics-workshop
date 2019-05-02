@@ -28,6 +28,7 @@
     "typescript": "~3.4.3"
   },
   "devDependencies": {
+    "@schuchard/prettier": "3.0.2",
     "husky": "1.3.1",
     "lint-staged": "8.1.5",
     "prettier": "1.17.0"
