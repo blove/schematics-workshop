@@ -41,14 +41,12 @@ function addFiles(_options: AddFilesInterface): Rule {
     context.logger.debug(`adding files to ${path} dir`);
     _options.browserType = getBase64Image(_options.browserType);
 
-    const templateSource = apply(url("./files"), [
+    return apply(url("./files"), [
       template({
         ...strings,
         ..._options
       }),
       move(path)
-    ]);
-
-    return mergeWith(templateSource);
+    ])(context);
   };
 }
