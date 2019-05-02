@@ -8,11 +8,12 @@ import {
   url,
   template,
   move,
-  mergeWith
-} from "@angular-devkit/schematics";
-import { strings } from "@angular-devkit/core";
-import { getBase64Image } from "./utils";
-import { dasherize } from "@angular-devkit/core/src/utils/strings";
+  mergeWith,
+  externalSchematic,
+} from '@angular-devkit/schematics';
+import { strings } from '@angular-devkit/core';
+import { getBase64Image } from './utils';
+import { dasherize } from '@angular-devkit/core/src/utils/strings';
 
 interface AddFilesInterface {
   name: string;
@@ -23,7 +24,7 @@ interface AddFilesInterface {
 export function schematicStarter(_options: AddFilesInterface): Rule {
   _options = {
     ..._options,
-    ...{ selector: `app-${dasherize(_options.name)}`, style: "css" }
+    ...{ selector: `app-${dasherize(_options.name)}`, style: 'css' },
   };
 
   return (tree: Tree, _context: SchematicContext) => {
@@ -34,7 +35,7 @@ export function schematicStarter(_options: AddFilesInterface): Rule {
 function addFiles(_options: AddFilesInterface): Rule {
   return (tree: Tree, context: SchematicContext) => {
     if (!_options.name) {
-      throw new SchematicsException("Entity name is required");
+      throw new SchematicsException('Entity name is required');
     }
     const path = `./src/app/components`;
 
